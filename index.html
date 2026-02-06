@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday, Siv Siv! 🎉</title>
+    <title>Happy Birthday, Siv Siv! 🎂✨</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,177 +14,168 @@
         }
 
         body {
-            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #f5e1fd 0%, #d7f0ff 50%, #fff0f5 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
-            overflow-x: hidden;
             position: relative;
-            color: #1a1a2e;
+            overflow-x: hidden;
+            color: #2d1a47;
         }
 
-        /* Subtle animated gradient overlay */
         body::before {
             content: "";
             position: absolute;
             inset: 0;
-            background: linear-gradient(45deg, rgba(255,105,180,0.08), rgba(138,43,226,0.08), rgba(0,191,255,0.08));
-            animation: gradientFlow 18s ease infinite;
+            background: radial-gradient(circle at 20% 30%, rgba(236,72,153,0.08) 0%, transparent 40%),
+                        radial-gradient(circle at 80% 70%, rgba(167,139,250,0.09) 0%, transparent 50%);
+            animation: softPulse 20s ease-in-out infinite alternate;
             pointer-events: none;
         }
 
-        @keyframes gradientFlow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        @keyframes softPulse {
+            0% { opacity: 0.6; }
+            100% { opacity: 0.9; }
         }
 
         .container {
-            background: rgba(255, 255, 255, 0.18);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-radius: 28px;
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            padding: 48px 36px;
-            max-width: 860px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            background: rgba(255, 255, 255, 0.28);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 32px;
+            border: 1px solid rgba(255, 255, 255, 0.45);
+            padding: 50px 40px;
+            max-width: 900px;
+            box-shadow: 0 30px 80px rgba(139,92,246,0.18);
             text-align: center;
             position: relative;
             z-index: 10;
-            animation: fadeUp 1.4s ease-out;
+            animation: rise 1.6s ease-out;
         }
 
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(60px); }
-            to   { opacity: 1; transform: translateY(0); }
+        @keyframes rise {
+            from { opacity: 0; transform: translateY(80px) scale(0.94); }
+            to   { opacity: 1; transform: translateY(0) scale(1); }
         }
 
         h1 {
-            font-size: 3.6rem;
+            font-family: 'Poppins', sans-serif;
+            font-size: 4rem;
             font-weight: 800;
-            background: linear-gradient(90deg, #a78bfa, #ec4899, #60a5fa);
+            background: linear-gradient(90deg, #c084fc, #ec4899, #a78bfa, #60a5fa);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            margin-bottom: 0.4em;
-            letter-spacing: -1.5px;
-            line-height: 1.05;
+            margin-bottom: 0.3em;
+            letter-spacing: -2px;
+            line-height: 1;
         }
 
         .subtitle {
-            font-size: 1.8rem;
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
             font-weight: 600;
-            color: #4c1d95;
-            margin: 0.8em 0 1.8em;
-            opacity: 0.95;
+            color: #6b21a8;
+            margin: 0.6em 0 2em;
+            opacity: 0.92;
+        }
+
+        .central-illustration {
+            width: 100%;
+            max-width: 380px;
+            margin: 1.8em auto 2.5em;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 16px 48px rgba(139,92,246,0.22);
+            background: rgba(255,255,255,0.35);
+            backdrop-filter: blur(6px);
+            transition: all 0.5s cubic-bezier(0.34,1.56,0.64,1);
+        }
+
+        .central-illustration:hover {
+            transform: translateY(-16px) scale(1.06);
+            box-shadow: 0 32px 70px rgba(236,72,153,0.3);
+        }
+
+        .central-illustration img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         .emoji-group {
-            font-size: 3rem;
-            margin: 1.2em 0 2.2em;
+            font-size: 3.2rem;
+            margin: 1.5em 0 2em;
             display: flex;
             justify-content: center;
-            gap: 0.8em;
+            gap: 0.9em;
             flex-wrap: wrap;
         }
 
         .emoji-group span {
-            animation: floatEmoji 3.2s ease-in-out infinite;
-            display: inline-block;
+            animation: gentleFloat 4s ease-in-out infinite;
         }
 
-        .emoji-group span:nth-child(1) { animation-delay: 0s; }
-        .emoji-group span:nth-child(2) { animation-delay: 0.4s; }
-        .emoji-group span:nth-child(3) { animation-delay: 0.8s; }
-        .emoji-group span:nth-child(4) { animation-delay: 1.2s; }
-        .emoji-group span:nth-child(5) { animation-delay: 1.6s; }
+        .emoji-group span:nth-child(odd)  { animation-delay: 0.8s; }
+        .emoji-group span:nth-child(even) { animation-delay: 1.6s; }
 
-        @keyframes floatEmoji {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50%      { transform: translateY(-14px) rotate(6deg); }
-        }
-
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 28px;
-            margin: 2.5em 0;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .gallery img {
-            width: 100%;
-            height: 120px;
-            object-fit: contain;
-            border-radius: 16px;
-            background: rgba(255,255,255,0.4);
-            backdrop-filter: blur(4px);
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-        }
-
-        .gallery img:hover {
-            transform: translateY(-12px) scale(1.12);
-            box-shadow: 0 20px 40px rgba(139,92,246,0.35);
+        @keyframes gentleFloat {
+            0%, 100% { transform: translateY(0); }
+            50%      { transform: translateY(-12px); }
         }
 
         .message {
-            font-size: 1.22rem;
-            line-height: 1.9;
-            max-width: 720px;
-            margin: 0 auto 2.5em;
-            color: #2d1a47;
+            font-size: 1.28rem;
+            line-height: 2;
+            max-width: 760px;
+            margin: 0 auto 2.8em;
+            color: #322f47;
         }
 
         .highlight {
-            color: #7c3aed;
-            font-weight: 700;
-            background: linear-gradient(90deg, #c084fc30, #7c3aed30);
-            padding: 0 6px;
-            border-radius: 6px;
+            color: #d946ef;
+            font-weight: 600;
+            background: linear-gradient(90deg, #f9a8d4, #e9d5ff);
+            padding: 0 8px;
+            border-radius: 8px;
         }
 
         .music-control {
             position: fixed;
-            bottom: 32px;
-            right: 32px;
-            width: 64px;
-            height: 64px;
-            background: linear-gradient(135deg, #a78bfa, #7c3aed);
+            bottom: 40px;
+            right: 40px;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #d946ef, #a78bfa);
             border: none;
             border-radius: 50%;
             color: white;
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             cursor: pointer;
-            box-shadow: 0 10px 30px rgba(124,58,237,0.4);
-            transition: all 0.35s ease;
+            box-shadow: 0 12px 36px rgba(217,70,239,0.35);
+            transition: all 0.4s ease;
             z-index: 100;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: grid;
+            place-items: center;
         }
 
         .music-control:hover {
-            transform: scale(1.15) rotate(8deg);
-            box-shadow: 0 16px 40px rgba(124,58,237,0.55);
+            transform: scale(1.18) rotate(10deg);
+            box-shadow: 0 20px 50px rgba(217,70,239,0.5);
         }
 
-        .music-control:active {
-            transform: scale(0.92);
-        }
+        .music-control:active { transform: scale(0.9); }
 
         .music-control.playing {
-            animation: ring 2.2s ease-in-out infinite;
+            animation: glowPulse 2s ease-in-out infinite;
         }
 
-        @keyframes ring {
-            0%, 100% { box-shadow: 0 10px 30px rgba(124,58,237,0.4); }
-            50%      { box-shadow: 0 10px 50px rgba(124,58,237,0.7); }
+        @keyframes glowPulse {
+            0%,100% { box-shadow: 0 12px 36px rgba(217,70,239,0.35); }
+            50%     { box-shadow: 0 12px 60px rgba(217,70,239,0.65); }
         }
 
         canvas#confetti-canvas {
@@ -193,19 +185,17 @@
             z-index: 5;
         }
 
-        @media (max-width: 680px) {
-            .container {
-                padding: 36px 24px;
-            }
-            h1 { font-size: 2.8rem; }
-            .subtitle { font-size: 1.5rem; }
-            .gallery { gap: 20px; }
-            .gallery img { height: 100px; }
+        @media (max-width: 720px) {
+            .container { padding: 40px 28px; }
+            h1 { font-size: 3.2rem; }
+            .subtitle { font-size: 1.7rem; }
+            .central-illustration { max-width: 320px; }
             .music-control {
-                width: 56px;
-                height: 56px;
-                bottom: 24px;
-                right: 24px;
+                width: 60px;
+                height: 60px;
+                bottom: 28px;
+                right: 28px;
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -219,62 +209,61 @@
     </button>
 
     <div class="container">
-        <h1>Happy Birthday<br>siv siv! 🎂✨</h1>
+        <h1>Happy Birthday<br>siv siv! 🎂💫</h1>
 
-        <div class="subtitle">To the absolute best siv siv 🥳</div>
+        <div class="subtitle">To the most wonderful siv siv 🥰</div>
+
+        <div class="central-illustration">
+            <img src= "siv.jpg" 
+                alt="A joyful birthday celebration with balloons, confetti, and a cake" 
+                title="Happy Birthday, Siv Siv!" 
+                loading="lazy">
+        </div>
 
         <div class="emoji-group">
             <span>🎈</span>
+            <span>✨</span>
             <span>🥳</span>
             <span>🎁</span>
             <span>🍰</span>
-            <span>✨</span>
-        </div>
-
-        <div class="gallery">
-            <img src="https://media.istockphoto.com/id/2169360224/vector/cute-birthday-cake-kawaii-cartoon-character-set-funny-creamy-bakery-with-strawberries-with.jpg?s=1024x1024&w=is&k=20&c=6-5cwNuBQGgCd7cgyyfcZ_RlOk9RC8ZFdxWwg5a51uE=" alt="cute kawaii birthday cake">
-            <img src="https://thumbs.dreamstime.com/z/cute-kawaii-birthday-cake-coloring-page-candles-fun-creative-activity-delight-adorable-style-featuring-370017393.jpg" alt="kawaii cake with candles">
-            <img src="https://thumbs.dreamstime.com/b/happy-birthday-lettering-colorful-balloons-vector-illustration-cartoon-style-isolated-white-background-happy-birthday-169355164.jpg" alt="colorful happy birthday balloons">
-            <img src="https://thumbs.dreamstime.com/z/cute-pink-gift-box-blue-ribbon-sticker-charming-cartoon-style-vector-illustration-featuring-pink-gift-box-tied-421640518.jpg" alt="cute gift box">
         </div>
 
         <p class="message">
-            A bit late, but made with tons of love!<br><br>
-            Hope your birthday was filled with <span class="highlight">pure joy</span>, 
-            great laughs, yummy treats, and everything that lights you up 😊<br><br>
-            Here's to a new year packed with <strong>epic moments</strong>, surprise wins, 
-            and all the happiness you deserve.<br><br>
-            You're seriously the coolest — cheers to you, siv siv! 🥂💜
+            A little late wish, but filled with so much love!<br><br>
+            I hope your birthday was overflowing with <span class="highlight">pure happiness</span>, 
+            more money(jaek nhom pg),Ke nhae jrern, and all the things that make your heart smile <br><br>
+            Wishing you a beautiful new year full of <strong>magical surprises</strong>
+            Pass thesis nah bro siv siv! 🥂!!
         </p>
     </div>
 
     <script>
-        // Light confetti – less intense
+        // Gentle confetti
         const canvas = document.getElementById('confetti-canvas');
         const ctx = canvas.getContext('2d');
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
 
-        const colors = ['#ec4899', '#a78bfa', '#60a5fa', '#fbbf24', '#34d399'];
+        const colors = ['#d946ef', '#a78bfa', '#60a5fa', '#f472b6', '#fbbf24'];
         const pieces = [];
 
         class ConfettiPiece {
             constructor() {
                 this.x = Math.random() * canvas.width;
-                this.y = Math.random() * -100;
-                this.size = Math.random() * 7 + 5;
-                this.speedY = Math.random() * 2.2 + 1.5;
-                this.speedX = Math.random() * 1.5 - 0.75;
+                this.y = Math.random() * -120;
+                this.size = Math.random() * 6 + 4;
+                this.speedY = Math.random() * 1.8 + 1.2;
+                this.speedX = Math.random() * 1.2 - 0.6;
                 this.color = colors[Math.floor(Math.random() * colors.length)];
                 this.rotation = Math.random() * 360;
-                this.rotSpeed = Math.random() * 6 - 3;
+                this.rotSpeed = Math.random() * 4 - 2;
             }
             update() {
                 this.y += this.speedY;
                 this.x += this.speedX;
                 this.rotation += this.rotSpeed;
-                if (this.y > canvas.height + 50) {
-                    this.y = -50;
+                if (this.y > canvas.height + 60) {
+                    this.y = -60;
                     this.x = Math.random() * canvas.width;
                 }
             }
@@ -283,62 +272,54 @@
                 ctx.translate(this.x, this.y);
                 ctx.rotate(this.rotation * Math.PI / 180);
                 ctx.fillStyle = this.color;
-                ctx.globalAlpha = 0.8;
+                ctx.globalAlpha = 0.75;
                 ctx.fillRect(-this.size/2, -this.size/2, this.size, this.size);
                 ctx.restore();
             }
         }
 
-        for (let i = 0; i < 35; i++) {
-            pieces.push(new ConfettiPiece());
-        }
+        for (let i = 0; i < 28; i++) pieces.push(new ConfettiPiece());
 
-        function animate() {
+        function animateConfetti() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             pieces.forEach(p => { p.update(); p.draw(); });
-            requestAnimationFrame(animate);
+            requestAnimationFrame(animateConfetti);
         }
-        animate();
+        animateConfetti();
 
         window.addEventListener('resize', () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
         });
 
-        // Floating hearts on click
+        // Click hearts
         document.addEventListener('click', e => {
             const heart = document.createElement('div');
-            heart.textContent = '💖';
-            heart.style.position = 'fixed';
-            heart.style.left = e.clientX + 'px';
-            heart.style.top = e.clientY + 'px';
-            heart.style.fontSize = '1.8rem';
-            heart.style.pointerEvents = 'none';
-            heart.style.transform = 'translate(-50%, -50%)';
-            heart.style.animation = 'floatHeart 3.5s ease-out forwards';
+            heart.textContent = '💗';
+            heart.style.cssText = `
+                position: fixed; left: ${e.clientX}px; top: ${e.clientY}px;
+                font-size: 2rem; pointer-events: none; transform: translate(-50%, -50%);
+                animation: floatHeart 4s ease-out forwards;
+            `;
             document.body.appendChild(heart);
-            setTimeout(() => heart.remove(), 3500);
+            setTimeout(() => heart.remove(), 4000);
         });
 
-        // Simple music toggle (placeholder)
+        // Music toggle (placeholder)
         const musicBtn = document.getElementById('musicBtn');
         let playing = false;
-
         musicBtn.addEventListener('click', () => {
             playing = !playing;
-            musicBtn.innerHTML = playing 
-                ? '<i class="fas fa-pause"></i>' 
-                : '<i class="fas fa-music"></i>';
+            musicBtn.innerHTML = playing ? '<i class="fas fa-pause"></i>' : '<i class="fas fa-music"></i>';
             musicBtn.classList.toggle('playing', playing);
-            // Real audio: const audio = new Audio('...'); playing ? audio.play() : audio.pause();
         });
     </script>
 
     <style>
         @keyframes floatHeart {
-            0%   { opacity: 1; transform: translate(-50%, -50%) scale(0.6); }
-            40%  { transform: translate(-50%, -180%) scale(1.2) rotate(15deg); }
-            100% { opacity: 0; transform: translate(-50%, -380%) scale(0.8) rotate(45deg); }
+            0%   { opacity: 1; transform: translate(-50%, -50%) scale(0.7); }
+            50%  { transform: translate(-50%, -220%) scale(1.3) rotate(20deg); }
+            100% { opacity: 0; transform: translate(-50%, -420%) scale(0.9) rotate(60deg); }
         }
     </style>
 </body>
